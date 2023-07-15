@@ -1,0 +1,19 @@
+{
+    "name": "hesmatt/discord-hooker",
+    "description": "A lightweight Discord webhook client library for PHP",
+    "require": {
+        "guzzlehttp/guzzle": "^7.0",
+        "php": ">=7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "HesMatt\\DiscordHooker\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Matt",
+            "email": "mattsnonbasic@gmail.com"
+        }
+    ]
+}

@@ -11,7 +11,7 @@ Discord Hooker is a lighweight Discord webhook client library for PHP (>=7.0)
 You just make your project require it via Composer 👀
 
 ```bash
-  composer require hesmatt/discord-hooker
+composer require hesmatt/discord-hooker
 ```
 
 ## Usage
@@ -42,6 +42,7 @@ Let's change the code a bit
 
 ```php
 use HesMatt\DiscordHooker\Client\Webhook;
+use HesMatt\DiscordHooker\Dto\Embed\Embed;
 
 $webhook = new Webhook('Your webhook _URL_');
 
@@ -80,6 +81,7 @@ We need to send it now.
 
 ```php
 use HesMatt\DiscordHooker\Client\Webhook;
+use HesMatt\DiscordHooker\Dto\Embed\Embed;
 
 $webhook = new Webhook('Your webhook _URL_');
 $embed = new Embed(); //Let's assume we have the different parts we've already built.
@@ -99,6 +101,8 @@ The embeds have many settings, I'll be listing them here without 'The result' pa
 
 Adding a footer to embed
 ```php
+use HesMatt\DiscordHooker\Dto\Embed\Embed;
+
 $embed = new Embed();
 
 $embed->setFooter('The footer text', 'The footer image URL');
@@ -111,6 +115,8 @@ $embed->setTimestampNow();
 
 Setting a color
 ```php
+use HesMatt\DiscordHooker\Dto\Embed\Embed;
+
 $embed = new Embed();
 
 $embed->setColor('327424'); //Discord is using an int value of the color.
@@ -118,6 +124,8 @@ $embed->setColor('327424'); //Discord is using an int value of the color.
 
 Setting a thumbnail
 ```php
+use HesMatt\DiscordHooker\Dto\Embed\Embed;
+
 $embed = new Embed();
 
 $embed->setThumbnail('Url of the thumbnail image');
@@ -125,6 +133,8 @@ $embed->setThumbnail('Url of the thumbnail image');
 
 Adding an author
 ```php
+use HesMatt\DiscordHooker\Dto\Embed\Embed;
+
 $embed = new Embed();
 
 $embed->setAuthor('Name of Author','Icon of author','Url of author');
@@ -132,10 +142,14 @@ $embed->setAuthor('Name of Author','Icon of author','Url of author');
 
 Adding a field
 ```php
+use HesMatt\DiscordHooker\Dto\Embed\Embed;
+
 $embed = new Embed();
 
 $embed->addField('Text','Value',false); //The last parameter is whether you want the field to be inlined or no.
 ```
+
+We can of course combine any of these together, note that at least one field is required. So you need either an actual field, or title/description.
 ## Contributing
 
 Contributions are always welcome!
